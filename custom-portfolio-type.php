@@ -56,6 +56,15 @@ function mattu_portfolio_register_post_types() {
 			'not_found' => 'No Projects Found',
 			'not_found_in_trash' => 'No Projects Found in Trash'
 		),
+		'capabilities' => array(
+			'edit_post' => 'edit_project',
+			'edit_posts' => 'edit_projects',
+			'edit_others_posts' => 'edit_others_projects',
+			'publish_posts' => 'publish_projects',
+			'read_post' => 'read_project',
+			'read_private_posts' => 'read_private_projects',
+			'delete_post' => 'delete_project',
+		), 
 	);
 
 	/* Register the portfolio post type */
