@@ -21,4 +21,45 @@ function mattu_version_check() {
 	}
 }
 
+/* Set up the post types */
+add_action( 'init', 'mattu_portfolio_register_post_types' );
+
+/* Registers post types */
+function mattu_portfolio_register_post_types() {
+	/* Set up the arguments for the 'portfolio' post type. */
+	$portfolio_args = array(
+		'public' => true,
+		'query_var' => 'portfolio',
+		'rewrite' => array(
+			'slug' => 'portfolio',
+			'with_front' => false,
+			'feeds' => false
+		),
+		'has_archive' => true,
+		'supports' => array(
+			'title',
+			'editor',
+			'thumbnail',
+			'custom-fields',
+			'revisions',
+			'excerpt'
+		),
+		'labels' => array (
+			'name' => 'Portfolio',
+			'singular_name' => 'Portfolio',
+			'add_new' => 'Add Project',
+			'add_new_item' => 'Add New Project',
+			'edit_item' => 'Edit Project',
+			'new_item' => 'New Project',
+			'view_item' => 'View Project',
+			'search_items' => 'Search Projects',
+			'not_found' => 'No Projects Found',
+			'not_found_in_trash' => 'No Projects Found in Trash'
+		),
+	);
+
+	/* Register the portfolio post type */
+	register_post_type( 'portfolio', $portfolio_args );
+}
+
 ?>
