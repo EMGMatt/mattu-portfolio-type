@@ -21,6 +21,10 @@ function mattu_version_check() {
 	}
 }
 
+/**
+ * Custom taxonomy
+ */
+
 /* Set up the post types */
 add_action( 'init', 'mattu_portfolio_register_post_types' );
 
@@ -36,12 +40,14 @@ function mattu_portfolio_register_post_types() {
 			'feeds' => false
 		),
 		'has_archive' => true,
+		'menu_icon' => 'dashicons-images-alt',
 		'supports' => array(
 			'title',
 			'editor',
 			'thumbnail',
 			'custom-fields',
 			'revisions',
+			'page-attributes',
 			'excerpt'
 		),
 		'labels' => array (
@@ -59,11 +65,14 @@ function mattu_portfolio_register_post_types() {
 		'taxonomies' => array(
 			'post_tag',
 			'category'
-		), 
+		),
+		'can_export' => true,
 	);
 
 	/* Register the portfolio post type */
 	register_post_type( 'portfolio', $portfolio_args );
 }
+
+
 
 ?>

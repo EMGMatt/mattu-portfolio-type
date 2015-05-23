@@ -1,4 +1,5 @@
 <?php
+
 add_action('init', 'mattu_portfolio_register_shortcodes' );
 
 function mattu_portfolio_register_shortcodes() {
@@ -36,6 +37,7 @@ function mattu_portfolio_items_shortcode() {
 				'</a></li>',
 				false
 			);
+			
 		}
 
 		/* Close the unordered list. */
